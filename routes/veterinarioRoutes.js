@@ -1,5 +1,5 @@
 import  express, { Router }  from "express";
-import { registrar,perfil,confirmar,autenticar,olvidePassword,comprobarToken,nuevoPassword,actualizarPerfilDef,actualizarPassword } from "../controllers/veterinarioController.js";
+import { registrar,perfil,confirmar,autenticar,olvidePassword,comprobarToken,nuevoPassword,actualizarPerfil,actualizarPassword } from "../controllers/veterinarioController.js";
 import checkAuth from "../middleware/authMiddleware.js";
 
 
@@ -14,7 +14,7 @@ router.route('/olvide-password/:token').get(comprobarToken).post(nuevoPassword)
 
 //area privada
 router.get('/perfil',checkAuth,perfil);
-router.put('/perfil/:id',checkAuth,actualizarPerfilDef)
+router.put('/perfil/:id',checkAuth,actualizarPerfil)
 router.put('/actualizar-password',checkAuth,actualizarPassword)
 
 
